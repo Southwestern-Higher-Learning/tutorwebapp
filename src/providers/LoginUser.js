@@ -72,6 +72,7 @@ export const authProvider = {
         })
         .then(data => {
           window.localStorage.setItem("refresh_token", data['refresh_token'])
+          window.localStorage.setItem("access_token", data['access_token'])
           AUTH_GLOBALS = data
           cleanup()
           return data
