@@ -1,10 +1,11 @@
 import React from 'react';
 import {authProvider} from '../providers/LoginUser'
 import { useUser } from '../providers/UserContextProvider'
-import { Spinner, Container } from 'react-bootstrap'
+import { Spinner } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 export const HomePage = ()=>{
-    const { state, dispatch } = useUser()
+    const { dispatch } = useUser()
     const [isLoading, setIsLoading] = React.useState(true)
 
     const flipLoading = ()=>{
@@ -32,5 +33,12 @@ export const HomePage = ()=>{
 
     })
 
-    return isLoading ? (<Spinner></Spinner>) : (<div>{state.user.profile_url}</div>)
+    return isLoading ? (<Spinner></Spinner>) : (
+    <div>
+        <Link to="/profile">
+            <h1>
+                Profile
+            </h1>
+        </Link>
+    </div>)
 }
