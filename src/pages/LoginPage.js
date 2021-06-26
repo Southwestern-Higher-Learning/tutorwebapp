@@ -24,16 +24,17 @@ export const LoginPage = () => {
                 This application was developed to support the Southwestern Community with cooperation from the Center for Academic Success. As such, the restrictions outlined in the Southwestern University Honor Code and the Student handbook apply to any actions you take within the application.
                 By logging in you are agreeing that you will not break university Honor Code or Student Handbook Policy.
               </p>
-              <Button href="https://www.southwestern.edu/offices/success/">Click here for more info</Button>
+              <Row className="buttonRow">
+                <Button href="https://www.southwestern.edu/offices/success/">Click here for more info</Button>
+                {isLoading ? (
+                  <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                ) : (
+                    <Button onClick={login}>Log in with Google</Button>
+                  )}
+              </Row>
             </Jumbotron>
-
-            {isLoading ? (
-              <Spinner animation="border" role="status">
-                <span className="sr-only">Loading...</span>
-              </Spinner>
-            ) : (
-                <Button onClick={login}>Log in with Google</Button>
-              )}
           </Container>
         </Col>
       </Row>
