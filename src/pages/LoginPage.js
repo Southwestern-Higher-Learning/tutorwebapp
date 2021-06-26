@@ -4,7 +4,6 @@ import { Container, Row, Button, Col, Spinner } from "react-bootstrap"
 import { authProvider } from '../providers/LoginUser'
 
 export const LoginPage = () => {
-  const { dispatch } = useUser();
   const [isLoading, setIsLoading] = React.useState(false);
 
   const login = ()=>{

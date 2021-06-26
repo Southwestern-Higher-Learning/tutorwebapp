@@ -1,5 +1,5 @@
 import React from 'react';
-import {authProvider, AUTH_GLOBALS} from '../providers/LoginUser'
+import {authProvider} from '../providers/LoginUser'
 import { useUser } from '../providers/UserContextProvider'
 import { Spinner, Container } from 'react-bootstrap'
 
@@ -30,7 +30,7 @@ export const HomePage = ()=>{
         .catch(err => alert(err))
     }
 
-    }, [])
+    })
 
     return isLoading ? (<Spinner></Spinner>) : (<div>{state.user.profile_url}</div>)
 }
