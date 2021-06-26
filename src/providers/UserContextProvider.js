@@ -1,4 +1,5 @@
 import React from 'react';
+import {authProvider} from './LoginUser'
 
 let initialState = {
     user: null,
@@ -34,20 +35,10 @@ export default function ProviderComponent({children}){
     const [state, dispatch] = React.useReducer(reducer, initialState)
     const contextValue = React.useMemo(() => { return {state, dispatch}}, [state, dispatch])
 
-    // const checkLoggedIn = async () => {
-    //     const token = localStorage.getItem('refresh_token')
-    //     if(token){
-    //         const data = await RefreshUser(token)
-    //         dispatch({message: 'SET_USER', payload: data.user})
-    //         return true
-    //     } else {
-    //         return false;
-    //     } 
-    // };
-    const checkLoggedIn = true;
+    const refreshUser = authProvider.RefreshUser
 
     const providerValue = {
-        checkLoggedIn,
+        refreshUser,
         state,
         dispatch
     };

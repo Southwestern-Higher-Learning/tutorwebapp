@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export let AUTH_GLOBALS = {}
 
 const cleanup = () => {
@@ -36,6 +38,7 @@ export const authProvider = {
           .then(userData => {
             AUTH_GLOBALS['user'] = userData
             localStorage.setItem('user', userData)
+            return userData
           })
         }
         console.log("uhhh")
@@ -123,4 +126,28 @@ export const authProvider = {
       }
       return Promise.reject()
     },
+    // refresh user
+    RefreshUser: async (refreshToken) => {
+      const refreshResponse = await axios({
+          method: 'GET',
+          url: 'https://tutor.jakegut.com/auth/refresh',
+          headers: {
+              'contentType': 'application/json',
+              'Authorization': `Bearer ${refreshToken}`
+          }
+      })
+      const access_token = refreshResponse.data['access_token']
+      localStorage.setItem('access_token', access_token)
+
+      axios.defaults.headers.common['Authorization'] =  `Bearer ${access_token}`
+  
+      const userResponse = await axios.get('https://tutor.jakegut.com/user/me', {
+        headers: {
+          'Authorization': `Bearer ${access_token}`
+        }
+      });
+      const user = userResponse.data;
+      
+      return { user }
+  }
 }
