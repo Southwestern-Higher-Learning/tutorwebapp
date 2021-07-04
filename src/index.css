@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+    font-family: "PlayfairDisplayItalic";
+    src: local("PlayfairDisplay-Italic"), url('./assets/fonts/PlayfairDisplay-Italic.otf');
+    }
+@font-face {
+  font-family: "PlayfairDisplay";
+    src: local("PlayfairDisplay-Regular"), url('./assets/fonts/PlayfairDisplay-Regular.otf');
+}
+@font-face {
+  font-family: "HKGroteskRegular";
+    src: local("HKGrotesk-Regular"), url('./assets/fonts/HKGrotesk-Regular.otf');
+}
+@font-face {
+  font-family: "HKGroteskLight";
+    src: local("HKGrotesk-Light"), url('./assets/fonts/HKGrotesk-Light.otf');
+}
+@font-face {
+  font-family: "HKGroteskItalic";
+    src: local("HKGrotesk-Italic"), url('./assets/fonts/HKGrotesk-Italic.otf');
+}
