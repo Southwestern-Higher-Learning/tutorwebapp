@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .navigationBar {
   background-color: #FFCD00;
@@ -19,21 +20,12 @@
 .navBar {
 padding: 0;
 }
-.card-title.h5 {
-  align-self: center;
-}
 #root {
   height: 100vh;
   width: 100vw;
 }
 .navBar.navbar.navbar-expand.navbar-light {
   padding: 0;
-}
-.jumbotron.containter {
-  width: 100%;
-  margin: 0%;
-  padding: 0;
-  height: auto;
 }
 .jumbotron {
   opacity: 0.9;
@@ -44,6 +36,8 @@ margin: 0;
 padding: 0;
 max-width: 100%;
 height: 100%;
+display: flex;
+flex-direction: column;
 }
 .resources {
   width: 60%;
@@ -56,12 +50,14 @@ height: 100%;
   width: 100%;
 }
 .class {
-  height: 100%;
+  height: inherit;
 }
-.wholediv {
+.info {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.extra {
+.additionalInfo {
     display: flex;
     flex-direction: column;
     align-items: center;

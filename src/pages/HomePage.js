@@ -1,29 +1,11 @@
 import React from 'react';
-import { authProvider } from '../providers/LoginUser'
-import { Spinner, Container, Navbar, Nav, Jumbotron } from 'react-bootstrap'
+import { Container, Navbar, Nav, Jumbotron } from 'react-bootstrap'
 import { House, Person } from 'react-bootstrap-icons'
 
 
 export const HomePage = () => {
-    const [isLoading, setIsLoading] = React.useState(true)
 
-    const flipLoading = () => {
-        setIsLoading(!isLoading)
-    }
-
-    React.useEffect(() => {
-        const { searchParams } = new URL(window.location.href);
-        const code = searchParams.get('code');
-        if (code) {
-            authProvider.login({ code })
-                .then((res) => {
-                    flipLoading()
-                })
-                .catch(err => alert(err))
-        }
-    })
-
-    return isLoading ? (<Spinner></Spinner>) : (
+    return (
         <Container>
             <Navbar className="navBar">
                 <Nav className="navigationBar">
