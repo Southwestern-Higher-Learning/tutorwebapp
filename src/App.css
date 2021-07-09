@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .navigationBar {
   background-color: #FFCD00;
@@ -34,7 +35,7 @@ padding: 0;
 margin: 0;
 padding: 0;
 max-width: 100%;
-height: 100%;
+height: 100%; 
 display: flex;
 flex-direction: column;
 }
@@ -49,7 +50,7 @@ flex-direction: column;
   width: 100%;
 }
 .class {
-  height: 100%;
+  height: inherit;
 }
 .info {
   height: 100%;
