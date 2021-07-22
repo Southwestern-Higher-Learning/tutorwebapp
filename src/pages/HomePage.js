@@ -1,19 +1,12 @@
 import React from 'react';
 import { Container, Navbar, Nav, Jumbotron } from 'react-bootstrap'
-import { House, Person } from 'react-bootstrap-icons'
+import { NavigationBar } from '../components/NavigatonBar';
 
 
 export const HomePage = () => {
-
     return (
-        <Container>
-            <Navbar className="navBar">
-                <Nav className="navigationBar">
-                    <Nav.Link href="./HomePage">  <House /> </Nav.Link>
-                    <Nav.Link href="./SearchTutor.js">Find a Tutor</Nav.Link>
-                    <Nav.Link ><Person /></Nav.Link>
-                </Nav>
-            </Navbar>
+        <Container id="home">
+            <NavigationBar></NavigationBar>
             <Jumbotron>
                 <h1>Welcome top the SU tutor app!</h1>
                 <p>
@@ -44,7 +37,6 @@ export const HomePage = () => {
                 </Nav>
                 </Navbar>
             </div>
-
         </Container>
     )
 }
