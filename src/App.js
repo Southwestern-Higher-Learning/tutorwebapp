@@ -1,10 +1,12 @@
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { LoginPage } from './pages/LoginPage'
 import { HomePage } from './pages/HomePage'
 import { ProfilePage } from "./pages/ProfilePage";
-import { SearchTutor } from "./pages/SearchTutor";
 import ProviderComponent from './providers/UserContextProvider'
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { SearchTutor } from "./pages/SearchTutor";
 
 function App() {
   return (
