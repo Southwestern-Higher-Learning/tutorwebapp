@@ -1,4 +1,4 @@
-import React from "react";
+import React, { state } from "react";
 import { useUser } from "../providers/UserContextProvider";
 import { Container, Row, Button, Col, Spinner, Jumbotron } from "react-bootstrap"
 import { authProvider } from '../providers/LoginUser'
@@ -13,7 +13,7 @@ export const LoginPage = withRouter(({ history }) => {
       setIsLoading(true)
       try {
         const user = await authProvider.RefreshUser(localStorage.getItem('refresh_token'))
-        dispatch({ message: "SET_USER", payload: user.user })
+        dispatch(...state, ...user)
         setIsLoading(false)
         history.push('/profile')
       } catch (error) {
@@ -23,7 +23,10 @@ export const LoginPage = withRouter(({ history }) => {
     } else {
       setIsLoading(true)
       authProvider.login({})
-        .then(setIsLoading(false))
+        .then(res => {
+          dispatch(res);
+          setIsLoading(false);
+        })
         .catch(err => alert(err))
     }
 
