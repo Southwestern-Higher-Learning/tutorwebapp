@@ -22,6 +22,7 @@ const reducer = (state, action) => {
                 access_token: action.payload
             }
         case "SET":
+            localStorage.setItem("accessKey", action.payload.access_token);
             return {
                 user: action.payload.user,
                 access_token: action.payload.access_token
