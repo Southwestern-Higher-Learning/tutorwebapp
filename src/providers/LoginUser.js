@@ -13,7 +13,8 @@ const cleanup = () => {
 
 const redirectUrl = process.env.REACT_APP_REDIRECT_FULL_URL
 const baseUrl = process.env.REACT_APP_BASE_URL
-
+console.log(`redirectUrl: ${redirectUrl}`)
+console.log(`baseUrl: ${baseUrl}`)
 export const authProvider = {
     // authentication
     login: (params) => {
