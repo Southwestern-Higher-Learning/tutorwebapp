@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Navbar, Nav, Jumbotron, Spinner } from 'react-bootstrap'
 import { useUser } from '../providers/UserContextProvider';
 import { House, Person } from 'react-bootstrap-icons'
+import { authProvider } from '../providers/LoginUser';
 
 
 export const HomePage = () => {
@@ -18,7 +19,8 @@ export const HomePage = () => {
         if (code) {
             authProvider.login({ code })
                 .then((res) => {
-                    dispatch({ message: "SET", payload: res });
+                    console.log(res)
+                    dispatch(res);
                     flipLoading()
                 })
                 .catch(err => alert(err))
