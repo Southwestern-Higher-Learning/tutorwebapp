@@ -9,7 +9,7 @@ export const NavigationBar = () => {
             <Nav className="navigationBar">
                 <Nav.Link href="/homepage">  <House /> </Nav.Link>
                 <Nav.Link href="/searchtutor">Find a Tutor</Nav.Link>
-                <Nav.Link><Person /></Nav.Link>
+                <Nav.Link href="/profile"><Person /></Nav.Link>
             </Nav>
         </Navbar>
     )

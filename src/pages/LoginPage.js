@@ -5,7 +5,7 @@ import { authProvider } from '../providers/LoginUser'
 import { withRouter } from "react-router-dom";
 
 export const LoginPage = withRouter(({ history }) => {
-  const { state, dispatch } = useUser()
+  const { state, setState } = useUser()
   const [isLoading, setIsLoading] = React.useState(false);
 
   const login = async () => {
@@ -13,7 +13,7 @@ export const LoginPage = withRouter(({ history }) => {
       setIsLoading(true)
       try {
         const user = await authProvider.RefreshUser(localStorage.getItem('refresh_token'))
-        dispatch(...state, ...user)
+        setState(...state, ...user)
         setIsLoading(false)
         history.push('/profile')
       } catch (error) {
@@ -24,8 +24,9 @@ export const LoginPage = withRouter(({ history }) => {
       setIsLoading(true)
       authProvider.login({})
         .then(res => {
-          dispatch(res);
+          setState(res);
           setIsLoading(false);
+          history.push('/homepage')
         })
         .catch(err => alert(err))
     }
