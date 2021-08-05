@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Navbar, Nav, Jumbotron, Spinner } from 'react-bootstrap'
 import { useUser } from '../providers/UserContextProvider';
-import { House, Person } from 'react-bootstrap-icons'
 import { authProvider } from '../providers/LoginUser';
+import { NavigationBar } from '../components/NavigatonBar';
 
 
 export const HomePage = () => {
@@ -29,13 +29,7 @@ export const HomePage = () => {
 
     return isLoading ? (<Spinner></Spinner>) : (
         <Container>
-            <Navbar className="navBar">
-                <Nav className="navigationBar">
-                    <Nav.Link href="./HomePage">  <House /> </Nav.Link>
-                    <Nav.Link href="./SearchTutor.js">Find a Tutor</Nav.Link>
-                    <Nav.Link ><Person /></Nav.Link>
-                </Nav>
-            </Navbar>
+            <NavigationBar></NavigationBar>
             <Jumbotron>
                 <h1>Welcome top the SU tutor app!</h1>
                 <p>
