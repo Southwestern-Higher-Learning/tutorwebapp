@@ -63,3 +63,22 @@ flex-direction: column;
     align-items: center;
     padding: 5vh;
 }
+.profileContainer {
+  padding-top: 1vh;
+  padding-left: 5vw;
+}
+.welcomeText {
+  font-size: 30px;
+  padding-bottom: 1vw;
+}
+.profileImage {
+  border-radius: 100%;
+}
+.nameText {
+  size: 20px;
+  width: 20%;
+}
+.form {
+  padding-top: 10px;
+  width: 100%;
+}
