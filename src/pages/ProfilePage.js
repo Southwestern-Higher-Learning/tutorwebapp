@@ -1,13 +1,15 @@
-import React from 'react';
-import { useUser } from '../providers/UserContextProvider';
+import React, { useState } from 'react';
+import { NavigationBar } from '../components/NavigatonBar';
 
-export const ProfilePage = ()=>{
-const {state} = useUser()
-console.log(`current state: ${state}`)
+export const ProfilePage = () => {
 
-return (
-    <div>
-        <img src={state?.user?.profile_url} alt="profile" />
-    </div>
-)
+    const [state, setstate] = useState(JSON.parse(localStorage.getItem("user")))
+    console.log(`current state: ${state}`)
+
+    return (
+        <div>
+            <NavigationBar></NavigationBar>
+            <img src={state?.profile_url} alt="profile" />
+        </div>
+    )
 }
