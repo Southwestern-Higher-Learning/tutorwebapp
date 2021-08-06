@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Card, Form, Button } from 'react-bootstrap'
 import { NavigationBar } from '../components/NavigatonBar'
-import { Search } from 'react-bootstrap-icons'
+
 
 
 export const SearchTutor = () => {
@@ -17,7 +17,7 @@ export const SearchTutor = () => {
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Search
-  </Button>
+                        </Button>
                     </Form>
                 </Card.Body>
                 {/* TODO WORK ON QUERY TO BACK END FOR TUTOR INFO */}
