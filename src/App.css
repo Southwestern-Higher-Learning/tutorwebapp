@@ -19,6 +19,7 @@
 }
 .navBar {
 padding: 0;
+width: 100%;
 }
 #root {
   height: 100vh;
@@ -81,4 +82,10 @@ flex-direction: column;
 .form {
   padding-top: 10px;
   width: 100%;
+}
+.submit-button {
+  margin: 10px;
+}
+.bio-form {
+  width: 600px;
 }
