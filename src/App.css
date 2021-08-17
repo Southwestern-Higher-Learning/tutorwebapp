@@ -104,7 +104,6 @@ flex-direction: column;
   justify-content: center;
 }
 .aboutMeDetails {
-  padding-left: 30%;
   justify-content: center;
   width: 70%;
   align-items: center;
@@ -112,4 +111,7 @@ flex-direction: column;
 .aboutMeButton {
   width: 30%;
   position: inherit;
+}
+.aboutCard{
+
 }
