@@ -66,7 +66,7 @@ export const ProfilePage = () => {
                 <Row className="profileRows">
                     <div className="nameText">{state?.first_name} {state?.last_name}</div>
                 </Row>
-                <button onClick={showModal}> Edit your About me</button>
+                <button className="aboutMeButton" onClick={showModal}> Edit your About me</button>
                 <Modal show={isOpen} onHide={hideModal}>
                     <Modal.Header>
                         <Modal.Title>Update Your About Me</Modal.Title>

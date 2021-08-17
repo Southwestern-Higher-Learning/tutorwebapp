@@ -75,7 +75,7 @@ flex-direction: column;
 .welcomeText {
   font-size: 30px;
   padding-bottom: 1vw;
-  padding: 10%;
+  padding: 2%;
 }
 .profileImage {
   border-radius: 100%;
@@ -98,7 +98,13 @@ flex-direction: column;
   justify-content: center;
 }
 .aboutMeDetails {
+  padding-left: 30%;
   justify-content: center;
   width: 70%;
   align-items: center;
+}
+.aboutMeButton {
+  width: 30%;
+  position: inherit;
+  
 }
