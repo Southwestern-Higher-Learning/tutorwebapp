@@ -94,7 +94,13 @@ flex-direction: column;
 .form-control {
   width: 100px;
 }
-.profileRows {
+.welcomeRow{
+  justify-content: center;
+}
+.imageRow{
+  justify-content: left;
+}
+.aboutRow{
   justify-content: center;
 }
 .aboutMeDetails {
@@ -106,5 +112,4 @@ flex-direction: column;
 .aboutMeButton {
   width: 30%;
   position: inherit;
-  
 }

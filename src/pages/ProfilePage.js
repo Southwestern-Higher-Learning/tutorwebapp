@@ -42,7 +42,7 @@ export const ProfilePage = () => {
         <div className="profilePage">
             <NavigationBar></NavigationBar>
             <div className="profileContainer">
-                <Row className="profileRows">
+                <Row className="welcomeRow">
                     <div className="welcomeText">
                         Welcome to your profile page
                     </div>
@@ -60,10 +60,10 @@ export const ProfilePage = () => {
                 {/* <Row className="profileRows">
                   
                 </Row> */}
-                <Row className="profileRows">
+                <Row className="imageRow">
                     <img className="profileImage" src={state?.profile_url} alt="profile" />
                 </Row>
-                <Row className="profileRows">
+                <Row className="aboutRow">
                     <div className="nameText">{state?.first_name} {state?.last_name}</div>
                 </Row>
                 <button className="aboutMeButton" onClick={showModal}> Edit your About me</button>
@@ -89,12 +89,6 @@ export const ProfilePage = () => {
 
                     </Modal.Footer>
                 </Modal>
-                <Row className="profileRows">
-                    <div>
-
-                    </div>
-                    {textValue}
-                </Row>
 
             </div>
         </div>
