@@ -64,13 +64,18 @@ flex-direction: column;
     align-items: center;
     padding: 5vh;
 }
+/* profile screen */
 .profileContainer {
-  padding-top: 1vh;
-  padding-left: 5vw;
+  height: 91vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: space-around;
 }
 .welcomeText {
   font-size: 30px;
   padding-bottom: 1vw;
+  padding: 10%;
 }
 .profileImage {
   border-radius: 100%;
@@ -81,11 +86,19 @@ flex-direction: column;
 }
 .form {
   padding-top: 10px;
-  width: 100%;
+  width: 80%;
 }
 .submit-button {
   margin: 10px;
 }
-.bio-form {
-  width: 600px;
+.form-control {
+  width: 100px;
+}
+.profileRows {
+  justify-content: center;
+}
+.aboutMeDetails {
+  justify-content: center;
+  width: 70%;
+  align-items: center;
 }

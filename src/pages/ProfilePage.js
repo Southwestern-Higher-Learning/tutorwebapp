@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Form, Button, Modal } from 'react-bootstrap';
+import { Row, Form, Button, Modal, Card } from 'react-bootstrap';
 import { NavigationBar } from '../components/NavigatonBar';
 import { UpdateDescription } from '../providers/UpdateAboutMe';
 
@@ -8,7 +8,7 @@ export const ProfilePage = () => {
     const [state] = useState(JSON.parse(localStorage.getItem("user")))
     let [textValue, setTextValue] = useState(state.description)
 
-    //TODO: write a function that saves users input
+
     const onFormSubmit = async e => {
         e.preventDefault()
         const formData = new FormData(e.target),
@@ -20,8 +20,9 @@ export const ProfilePage = () => {
         if (response) {
             try {
                 setTextValue = () => {
-                    textValue = userInput.description
+                    textValue(userInput.description)
                 }
+                this.forceUpdate()
             } catch (error) {
                 // add better error handling
                 console.error()
@@ -38,22 +39,34 @@ export const ProfilePage = () => {
     };
 
     return (
-        <div>
+        <div className="profilePage">
             <NavigationBar></NavigationBar>
             <div className="profileContainer">
-                <Row>
+                <Row className="profileRows">
                     <div className="welcomeText">
                         Welcome to your profile page
                     </div>
+                    <div className="aboutMeDetails">
+                        <Card>
+                            <Card.Body>
+                                Your profile is a place to share a little about yourself. If you are a tutor
+                                share what you tutor and potential approaches you take when tutoring. If
+                                you are a student feel free to share ways that help you learn your major, minor, etc.
+                            </Card.Body>
+                        </Card>
+
+                    </div>
                 </Row>
-                <Row>
+                {/* <Row className="profileRows">
+                  
+                </Row> */}
+                <Row className="profileRows">
                     <img className="profileImage" src={state?.profile_url} alt="profile" />
+                </Row>
+                <Row className="profileRows">
                     <div className="nameText">{state?.first_name} {state?.last_name}</div>
                 </Row>
-                <Row>
-                    {textValue}
-                </Row>
-                <button onClick={showModal}>Display Modal</button>
+                <button onClick={showModal}> Edit your About me</button>
                 <Modal show={isOpen} onHide={hideModal}>
                     <Modal.Header>
                         <Modal.Title>Update Your About Me</Modal.Title>
@@ -68,15 +81,20 @@ export const ProfilePage = () => {
                                     placeholder="Update your about me here"
                                     style={{ height: '100px', width: '600px' }}
                                 />
-
-
+                                <Button className='submit-button' variant="primary" type="submit" onClick={hideModal}>Submit</Button>
                             </Form>
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button className='submit-button' variant="primary" type="submit">Submit</Button>
+
                     </Modal.Footer>
                 </Modal>
+                <Row className="profileRows">
+                    <div>
+
+                    </div>
+                    {textValue}
+                </Row>
 
             </div>
         </div>
