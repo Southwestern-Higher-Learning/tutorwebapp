@@ -79,41 +79,56 @@ flex-direction: column;
 }
 .profileImage {
   border-radius: 100%;
+  margin: auto;
+  margin-top:-5%;
 }
 .nameText {
-  size: 20px;
-  width: 20%;
+  size: auto;
+  width: auto;
+  margin: auto;
+  margin-bottom:5%;
 }
 .form {
   padding-top: 10px;
-  width: 80%;
+  width: auto;
 }
 .submit-button {
   margin: 10px;
 }
 .form-control {
-  width: 100px;
+  width: auto;
 }
+/* rows */
 .welcomeRow{
   justify-content: center;
 }
-.imageRow{
-  justify-content: left;
-}
-.aboutRow{
+
+.aboutMeRow{
   justify-content: center;
 }
+/* about details */
 .aboutMeDetails {
+  margin: auto;
   justify-content: center;
   width: 70%;
   align-items: center;
+  text-align: left;
+}
+.userCard{
+  margin: auto;
+  width: 90%;
+  
 }
 .aboutMeButton {
-  width: 30%;
-  position: inherit;
+  margin-top:-6%;
+  width: auto;
+  margin: auto;
+  margin-right: 1%;
+  background-color:#FFCD00;
+  border-color: black;
 }
 .bio{
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   margin-bottom: 10px;
 }
