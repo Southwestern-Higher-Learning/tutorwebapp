@@ -4,6 +4,7 @@ import { useUser } from '../providers/UserContextProvider';
 import { authProvider } from '../providers/LoginUser';
 import { NavigationBar } from '../components/NavigatonBar';
 
+// test
 
 export const HomePage = () => {
     const [isLoading, setIsLoading] = React.useState(true)

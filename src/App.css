@@ -19,6 +19,7 @@
 }
 .navBar {
 padding: 0;
+width: 100%;
 }
 #root {
   height: 100vh;
@@ -62,4 +63,55 @@ flex-direction: column;
     flex-direction: column;
     align-items: center;
     padding: 5vh;
+}
+/* profile screen */
+.profileContainer {
+  height: 91vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: space-around;
+}
+.welcomeText {
+  font-size: 30px;
+  padding-bottom: 1vw;
+  padding: 2%;
+}
+.profileImage {
+  border-radius: 100%;
+}
+.nameText {
+  size: 20px;
+  width: 20%;
+}
+.form {
+  padding-top: 10px;
+  width: 80%;
+}
+.submit-button {
+  margin: 10px;
+}
+.form-control {
+  width: 100px;
+}
+.welcomeRow{
+  justify-content: center;
+}
+.imageRow{
+  justify-content: left;
+}
+.aboutRow{
+  justify-content: center;
+}
+.aboutMeDetails {
+  justify-content: center;
+  width: 70%;
+  align-items: center;
+}
+.aboutMeButton {
+  width: 30%;
+  position: inherit;
+}
+.aboutCard{
+
 }
