@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React, { useState } from 'react';
 import { Row, Form, Button, Modal, Card } from 'react-bootstrap';
 import { NavigationBar } from '../components/NavigatonBar';
@@ -6,27 +7,16 @@ import { UpdateDescription } from '../providers/UpdateAboutMe';
 export const ProfilePage = () => {
 
     const [state] = useState(JSON.parse(localStorage.getItem("user")))
-    let [textValue, setTextValue] = useState(state.description)
+    let [textValue, setTextValue] = useState(state?.description)
 
 
     const onFormSubmit = async e => {
         e.preventDefault()
         const formData = new FormData(e.target),
             userInput = Object.fromEntries(formData.entries())
-        console.log(`form data object: ${userInput.description}`)
-        console.log(`state stuff: ${state.description}`)
         const response = await UpdateDescription(userInput.description, localStorage.getItem('access_token'))
-        console.log(response)
         if (response) {
-            try {
-                setTextValue = () => {
-                    textValue(userInput.description)
-                }
-                this.forceUpdate()
-            } catch (error) {
-                // add better error handling
-                console.error()
-            }
+            setTextValue(userInput?.description);
         }
     }
     const [isOpen, setIsOpen] = React.useState(false);
@@ -54,12 +44,8 @@ export const ProfilePage = () => {
                                 you are a student feel free to share ways that help you learn your major, minor, etc.
                             </Card.Body>
                         </Card>
-
                     </div>
                 </Row>
-                {/* <Row className="profileRows">
-                  
-                </Row> */}
                 <Row className="imageRow">
                     <img className="profileImage" src={state?.profile_url} alt="profile" />
                 </Row>
@@ -85,11 +71,10 @@ export const ProfilePage = () => {
                             </Form>
                         </div>
                     </Modal.Body>
-                    <Modal.Footer>
-
-                    </Modal.Footer>
                 </Modal>
-
+            </div>
+            <div className="bio">
+                {state?.description}
             </div>
         </div>
     )
