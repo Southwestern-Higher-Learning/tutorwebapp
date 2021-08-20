@@ -80,13 +80,14 @@ flex-direction: column;
 .profileImage {
   border-radius: 100%;
   margin: auto;
-  margin-top:-5%;
+  margin-top:-6%;
 }
 .nameText {
   size: auto;
   width: auto;
   margin: auto;
   margin-bottom:5%;
+  font-size: 150%;
 }
 .form {
   padding-top: 10px;

@@ -43,11 +43,11 @@ export const ProfilePage = () => {
             <NavigationBar></NavigationBar>
             <div className="profileContainer">
 
-                <Row className="welcomeRow">
+                {/* <Row className="welcomeRow">
                     <div className="welcomeText">
                         Welcome to your profile page
                     </div>
-                </Row>
+                </Row> */}
 
                 <Card className="userCard">
 
